@@ -1,0 +1,39 @@
+{
+  "name": "react-text-input-mask",
+  "version": "1.0.1",
+  "description": "react masked input component",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hkc1673/react-masked-input"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "mask-input"
+  ],
+  "author": "Habib Koc",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
