@@ -30,7 +30,7 @@ import { MaskedInput } from 'react-text-input-mask';
 
 ```jsx
 <MaskedInput mask={'99/99'}>
-    <input placeholder={'MM/YY'} />
+    <input placeholder='MM/YY' />
 </MaskedInput>
 ```
 ### You can use ant design

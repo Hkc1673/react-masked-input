@@ -1,6 +1,6 @@
 {
   "name": "react-text-input-mask",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react masked input component",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -34,6 +34,6 @@
     "typescript": "^5.5.2"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": ">=16"
   }
 }
