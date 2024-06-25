@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, cloneElement, Children, ChangeEvent, ReactElement } from 'react';
+import React, { useState, useEffect, forwardRef, cloneElement, Children, ChangeEvent, ReactElement } from 'react';
 
 interface MaskedInputProps {
     mask: string;
@@ -25,8 +25,12 @@ const applyMask = (value: string, mask: string): string => {
 };
 
 const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({ mask, children, ...props }, ref) => {
-    const defaultValue = props?.value ? applyMask(props?.value, mask) : '';
-    const [inputValue, setInputValue] = useState<string>(defaultValue);
+
+    const [inputValue, setInputValue] = useState<string>('');
+
+    useEffect(() => {
+        if(props?.value && inputValue === '') setInputValue(applyMask(props?.value, mask));
+    }, [props?.value]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const rawValue = e?.target?.value.replace(/\D/g, '');
