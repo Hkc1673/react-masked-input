@@ -4,6 +4,7 @@ interface MaskedInputProps {
     mask: string;
     children: ReactElement;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    value?: string;
 }
 
 const applyMask = (value: string, mask: string): string => {
@@ -24,7 +25,8 @@ const applyMask = (value: string, mask: string): string => {
 };
 
 const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({ mask, children, ...props }, ref) => {
-    const [inputValue, setInputValue] = useState<string>('');
+    const defaultValue = props?.value ? applyMask(props?.value, mask) : '';
+    const [inputValue, setInputValue] = useState<string>(defaultValue);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const rawValue = e?.target?.value.replace(/\D/g, '');
