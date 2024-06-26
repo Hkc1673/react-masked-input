@@ -1,30 +1,7 @@
 import React, { useState, useEffect, forwardRef, cloneElement, Children, ChangeEvent, ReactElement } from 'react';
+import { applyMask, IMaskedInputProps } from './helpers';
 
-interface MaskedInputProps {
-    mask: string;
-    children: ReactElement;
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-    value?: string;
-}
-
-const applyMask = (value: string, mask: string): string => {
-    let maskedValue = '';
-    let maskIndex = 0;
-    for (let i = 0; i < value?.length; i++) {
-        if (maskIndex >= mask?.length) break;
-        if (mask[maskIndex] === '9') {
-            maskedValue += value[i];
-            maskIndex++;
-        } else {
-            maskedValue += mask[maskIndex];
-            maskIndex++;
-            i--;
-        }
-    }
-    return maskedValue;
-};
-
-const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({ mask, children, ...props }, ref) => {
+const MaskedInput = forwardRef<HTMLInputElement, IMaskedInputProps>(({ mask, children, ...props }, ref) => {
 
     const [inputValue, setInputValue] = useState<string>('');
 
@@ -63,7 +40,5 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({ mask, chil
 
     return <>{Children?.map(children, cloneChildWithProps)}</>;
 });
-
-MaskedInput.displayName = 'MaskedInput';
 
 export {MaskedInput};
