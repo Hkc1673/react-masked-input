@@ -1,6 +1,6 @@
 {
   "name": "react-text-input-mask",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "React component for masked text input",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

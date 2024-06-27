@@ -25,9 +25,7 @@ const MaskedInput = forwardRef<HTMLInputElement, IMaskedInputProps>(({ mask, chi
     };
 
     const cloneChildWithProps = (child: ReactElement) => {
-        const acceptInput = ['Input', 'input', 'InputBase', 'styled.input', 'Styled(Input)', 'Styled(InputBase)'];
-        const isInput = child?.type === 'input' || acceptInput?.includes((child?.type as any)?.render?.displayName);
-        if (mask && isInput) {
+        if (mask) {
             return cloneElement(child, {
                 ...props,
                 value: inputValue,

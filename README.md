@@ -23,13 +23,13 @@ import { MaskedInput } from 'react-text-input-mask';
 ### Basic usage
 
 ```jsx
-<MaskedInput mask="TR99 9999 9999 9999 9999 9999 99">
-    <input placeholder="Enter IBAN" />
+<MaskedInput mask='TR99 9999 9999 9999 9999 9999 99'>
+    <input placeholder='Enter IBAN' />
 </MaskedInput>
 ```
 
 ```jsx
-<MaskedInput mask={'99/99'}>
+<MaskedInput mask='99/99'>
     <input placeholder='MM/YY' />
 </MaskedInput>
 ```
@@ -37,8 +37,8 @@ import { MaskedInput } from 'react-text-input-mask';
 ```jsx
 import { Input } from 'antd';
 
-<MaskedInput mask="9999 9999 9999 9999">
-    <Input placeholder="Enter card number" />
+<MaskedInput mask='9999 9999 9999 9999'>
+    <Input placeholder='Enter card number'/>
 </MaskedInput>
 ```
 ### You can use styled-components
@@ -46,8 +46,8 @@ import { Input } from 'antd';
 import styled from 'styled-components';
 const StyledInput = styled.input``;
 
-<MaskedInput mask="(999) 999 99 99">
-    <StyledInput placeholder="Enter phone number" />
+<MaskedInput mask='(999) 999 99 99'>
+    <StyledInput placeholder='Enter phone number'/>
 </MaskedInput>
 ```
 
