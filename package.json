@@ -15,9 +15,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
+    "build": "npx tsc && npx tsc --module commonjs --outDir dist/cjs"
   },
   "keywords": [
     "react",
